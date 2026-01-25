@@ -11,6 +11,7 @@ class Client(Methods):
             self,
             name: str,
             bot_token: str,
+            wallet_token: str = None,
             timeout: Optional[int] = 20,
             max_retry: Optional[int] = 3,
             base_url: Optional[str] = None,
@@ -21,11 +22,13 @@ class Client(Methods):
 
         :param name: The name of the bot.
         :param bot_token: The bot token for authentication.
+        :param wallet_token: The wallet token to payments.
         :param base_url: The base URL for the Bale API.
         :param max_retry: The number of attempts by the client to send the request to the server.
         """
         self.name = name
         self.bot_token = bot_token
+        self.wallet_token = wallet_token
         self.timeout = timeout
         self.max_retry = max_retry
         self.base_url = base_url
