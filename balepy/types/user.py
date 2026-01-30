@@ -1,7 +1,7 @@
 class User:
     
     def __init__(self, data: dict):
-        self.data = data
+        self.data = data["result"]
     
     @property
     def id(self) -> int:
