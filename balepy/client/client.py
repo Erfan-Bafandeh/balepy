@@ -4,6 +4,8 @@ from balepy.http import API
 from balepy.types import Updates
 from balepy.methods import Methods
 
+from colorama import Fore
+
 
 class Client(Methods):
 
@@ -11,7 +13,7 @@ class Client(Methods):
             self,
             name: str,
             bot_token: str,
-            wallet_token: Optional[str] = "WALLET-TEST-1111111111111111",
+            wallet_token: Optional[str] = None,
             timeout: Optional[int] = 20,
             max_retry: Optional[int] = 3,
             base_url: Optional[str] = None,
@@ -35,7 +37,7 @@ class Client(Methods):
         self.proxies = proxies
         self.api = API(client=self)
         if wallet_token == "WALLET-TEST-1111111111111111":
-            print("warning: you are using test wallet")
+            print(f"{Fore.RED}WARNING: {Fore.YELLOW}Using TEST WALLET{Fore.RESET}")
 
     def on_message(self, func):
         async def decorator():
