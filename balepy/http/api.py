@@ -26,7 +26,7 @@ class API:
                     response_data = await response.json()
                     if response_data.get("ok"):
                         response_data.pop("ok")
-                        return Results(response_data)
+                        return response_data
                     error_code = response_data.get("error_code")
                     description = response_data.get("description")
                     raise APIError(description, error_code)
