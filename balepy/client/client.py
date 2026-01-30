@@ -11,7 +11,7 @@ class Client(Methods):
             self,
             name: str,
             bot_token: str,
-            wallet_token: str = None,
+            wallet_token: Optional[str] = "WALLET-TEST-1111111111111111",
             timeout: Optional[int] = 20,
             max_retry: Optional[int] = 3,
             base_url: Optional[str] = None,
@@ -34,6 +34,8 @@ class Client(Methods):
         self.base_url = base_url
         self.proxies = proxies
         self.api = API(client=self)
+        if wallet_token == "WALLET-TEST-1111111111111111":
+            print("warning: you are using test wallet")
 
     def on_message(self, func):
         async def decorator():
