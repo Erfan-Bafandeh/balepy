@@ -7,6 +7,7 @@ from .set_chat_photo import SetChatPhoto
 from .leave_chat import LeaveChat
 from .get_chat import GetChat
 from .get_chat_administrators import GetChatAdministrators
+from .get_chat_members_count import GetChatMembersCount
 
 
 class Users(GetMe,
@@ -17,6 +18,7 @@ class Users(GetMe,
             SetChatPhoto,
             LeaveChat,
             GetChat,
-            GetChatAdministrators
+            GetChatAdministrators,
+            GetChatMembersCount
             ):
     pass
