@@ -14,6 +14,7 @@ from .send_location import SendLocation
 from .send_contact import SendContact
 from .send_chat_action import SendChatAction
 from .get_file import GetFile
+from .anwser_callback_query import AnwserCallbackQuery
 
 
 class Messages(SendMessage,
@@ -31,6 +32,7 @@ class Messages(SendMessage,
                SendLocation,
                SendContact,
                SendChatAction,
-               GetFile
+               GetFile,
+               AnwserCallbackQuery
                ):
     pass
