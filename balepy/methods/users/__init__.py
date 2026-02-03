@@ -13,6 +13,7 @@ from .set_chat_title import SetChatTitle
 from .set_chat_description import SetChatDescription
 from .delete_chat_photo import DeleteChatPhoto
 from .create_chat_invite_link import CreateChatInviteLink
+from .revoke_chat_invite_link import RevokeChatInviteLink
 
 
 class Users(GetMe,
@@ -29,6 +30,7 @@ class Users(GetMe,
             SetChatTitle,
             SetChatDescription,
             DeleteChatPhoto,
-            CreateChatInviteLink
+            CreateChatInviteLink,
+            RevokeChatInviteLink
             ):
     pass
