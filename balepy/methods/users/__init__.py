@@ -10,6 +10,7 @@ from .get_chat_administrators import GetChatAdministrators
 from .get_chat_members_count import GetChatMembersCount
 from .get_chat_member import GetChatMember
 from .set_chat_title import SetChatTitle
+from .set_chat_description import SetChatDescription
 
 
 class Users(GetMe,
@@ -23,6 +24,7 @@ class Users(GetMe,
             GetChatAdministrators,
             GetChatMembersCount,
             GetChatMember,
-            SetChatTitle
+            SetChatTitle,
+            SetChatDescription
             ):
     pass
