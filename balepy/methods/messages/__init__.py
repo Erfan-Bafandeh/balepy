@@ -16,6 +16,7 @@ from .send_chat_action import SendChatAction
 from .get_file import GetFile
 from .anwser_callback_query import AnwserCallbackQuery
 from .ask_review import AskReview
+from .pin import PinChatMessage
 
 
 class Messages(SendMessage,
@@ -35,6 +36,7 @@ class Messages(SendMessage,
                SendChatAction,
                GetFile,
                AnwserCallbackQuery,
-               AskReview
+               AskReview,
+               PinChatMessage
                ):
     pass
