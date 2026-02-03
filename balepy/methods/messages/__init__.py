@@ -13,6 +13,7 @@ from .send_media_group import SendMediaGroup
 from .send_location import SendLocation
 from .send_contact import SendContact
 from .send_chat_action import SendChatAction
+from .get_file import GetFile
 
 
 class Messages(SendMessage,
@@ -29,6 +30,7 @@ class Messages(SendMessage,
                SendMediaGroup,
                SendLocation,
                SendContact,
-               SendChatAction
+               SendChatAction,
+               GetFile
                ):
     pass
