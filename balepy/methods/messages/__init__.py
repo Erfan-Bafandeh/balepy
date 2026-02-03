@@ -15,6 +15,7 @@ from .send_contact import SendContact
 from .send_chat_action import SendChatAction
 from .get_file import GetFile
 from .anwser_callback_query import AnwserCallbackQuery
+from .ask_review import AskReview
 
 
 class Messages(SendMessage,
@@ -33,6 +34,7 @@ class Messages(SendMessage,
                SendContact,
                SendChatAction,
                GetFile,
-               AnwserCallbackQuery
+               AnwserCallbackQuery,
+               AskReview
                ):
     pass
