@@ -18,6 +18,7 @@ from .anwser_callback_query import AnwserCallbackQuery
 from .ask_review import AskReview
 from .pin import PinChatMessage
 from .unpin import UnpinChatMessage
+from .unpin_all_messages import UnpinAllChatMessages
 
 
 class Messages(SendMessage,
@@ -39,6 +40,7 @@ class Messages(SendMessage,
                AnwserCallbackQuery,
                AskReview,
                PinChatMessage,
-               UnpinChatMessage
+               UnpinChatMessage,
+               UnpinAllChatMessages
                ):
     pass
