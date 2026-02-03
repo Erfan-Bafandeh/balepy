@@ -11,6 +11,7 @@ from .get_chat_members_count import GetChatMembersCount
 from .get_chat_member import GetChatMember
 from .set_chat_title import SetChatTitle
 from .set_chat_description import SetChatDescription
+from .delete_chat_photo import DeleteChatPhoto
 
 
 class Users(GetMe,
@@ -25,6 +26,7 @@ class Users(GetMe,
             GetChatMembersCount,
             GetChatMember,
             SetChatTitle,
-            SetChatDescription
+            SetChatDescription,
+            DeleteChatPhoto
             ):
     pass
