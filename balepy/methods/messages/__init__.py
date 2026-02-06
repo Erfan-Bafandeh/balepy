@@ -20,6 +20,7 @@ from .pin import PinChatMessage
 from .unpin import UnpinChatMessage
 from .unpin_all_messages import UnpinAllChatMessages
 from .edit_message_caption import EditMessageCaption
+from .edit_message_reply_markup import EditMessageReplyMarkup
 
 
 class Messages(SendMessage,
@@ -43,6 +44,7 @@ class Messages(SendMessage,
                PinChatMessage,
                UnpinChatMessage,
                UnpinAllChatMessages,
-               EditMessageCaption
+               EditMessageCaption,
+               EditMessageReplyMarkup
                ):
     pass
