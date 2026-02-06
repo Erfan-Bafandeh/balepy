@@ -19,6 +19,7 @@ from .ask_review import AskReview
 from .pin import PinChatMessage
 from .unpin import UnpinChatMessage
 from .unpin_all_messages import UnpinAllChatMessages
+from .edit_message_caption import EditMessageCaption
 
 
 class Messages(SendMessage,
@@ -41,6 +42,7 @@ class Messages(SendMessage,
                AskReview,
                PinChatMessage,
                UnpinChatMessage,
-               UnpinAllChatMessages
+               UnpinAllChatMessages,
+               EditMessageCaption
                ):
     pass
