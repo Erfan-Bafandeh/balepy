@@ -5,3 +5,4 @@ from .user import User
 from .webhook_info import WebHookInfo
 from .chat import Chat
 from .chat_photo import ChatPhoto
+from .chat_full_info import ChatFullInfo

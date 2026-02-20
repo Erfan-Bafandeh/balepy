@@ -1,14 +1,14 @@
 class ChatPhoto:
     
     def __init__(self, data: dict):
-        self.data = data["result"]
+        self.data = data
     
     @property
-    def small_file_id(self) -> int:
+    def small_file_id(self) -> str:
         return self.data.get("small_file_id")
     
     @property
-    def small_file_unique_id(self) -> bool:
+    def small_file_unique_id(self) -> str:
         return self.data.get("small_file_unique_id")
     
     @property
