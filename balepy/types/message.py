@@ -211,63 +211,63 @@ class Message:
             chat_id=self.chat_id, text=text,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_photo(self, photo: str, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_photo(
             chat_id=self.chat_id, photo=photo, caption=caption,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_document(self, document: str, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_document(
             chat_id=self.chat_id, document=document, caption=caption,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_audio(self, audio: str, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_audio(
             chat_id=self.chat_id, audio=audio, caption=caption,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_video(self, video: str, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_video(
             chat_id=self.chat_id, video=video, caption=caption,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_voice(self, voice: str, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_voice(
             chat_id=self.chat_id, voice=voice, caption=caption,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_animation(self, animation: str, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_animation(
             chat_id=self.chat_id, animation=animation, caption=caption,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_sticker(self, sticker: str, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_sticker(
             chat_id=self.chat_id, sticker=sticker,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_video_note(self, video_note: str, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_video_note(
             chat_id=self.chat_id, video_note=video_note,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_venue(self, latitude: float, longitude: float, title: str, address: str, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_venue(
@@ -275,33 +275,33 @@ class Message:
             title=title, address=address,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_location(self, latitude: float, longitude: float, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_location(
             chat_id=self.chat_id, latitude=latitude, longitude=longitude,
             reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def reply_contact(self, phone_number: str, first_name: str, last_name: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.send_contact(
             chat_id=self.chat_id, phone_number=phone_number, first_name=first_name,
             last_name=last_name, reply_to_message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def forward(self, to_chat_id: Union[int, str]) -> Message:
         result = await self.client.forward_message(
             chat_id=to_chat_id, from_chat_id=self.chat_id, message_id=self.message_id
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def copy_to(self, chat_id: Union[int, str]) -> Message:
         result = await self.client.copy_message(
             chat_id=chat_id, from_chat_id=self.chat_id, message_id=self.message_id
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def delete(self) -> dict:
         return await self.client.delete_message(
@@ -313,20 +313,20 @@ class Message:
             chat_id=self.chat_id, message_id=self.message_id,
             text=text, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def edit_caption(self, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.edit_message_caption(
             chat_id=self.chat_id, message_id=self.message_id,
             caption=caption, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def edit_reply_markup(self, reply_markup: Optional[dict] = None) -> Message:
         result = await self.client.edit_message_reply_markup(
             chat_id=self.chat_id, message_id=self.message_id, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def pin(self, disable_notification: bool = False) -> dict:
         return await self.client.pin(

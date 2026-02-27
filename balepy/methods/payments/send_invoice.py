@@ -1,11 +1,10 @@
 from typing import Optional, Union
+import json
 
 from balepy.objects import HTTPMethod
 from balepy.types import LabeledPrice
 
 import balepy
-
-import json
 
 
 class SendInvoice:
@@ -16,7 +15,7 @@ class SendInvoice:
             title: str,
             description: str,
             payload: str,
-            prices: list[LabeledPrice],
+            prices: list,
             photo_url: Optional[str] = None,
             photo_size: Optional[int] = None,
             photo_width: Optional[int] = None,
@@ -26,15 +25,20 @@ class SendInvoice:
             need_email: Optional[bool] = None,
             is_flexible: Optional[bool] = None,
             reply_to_message_id: Optional[int] = None,
-            reply_markup: Optional[dict] = None
+            reply_markup=None
     ) -> dict:
+        serialized_prices = [
+            p.to_dict() if hasattr(p, "to_dict") else p
+            for p in prices
+        ]
+        markup_dict = reply_markup.to_dict() if hasattr(reply_markup, "to_dict") else reply_markup
         params = {
             "chat_id": chat_id,
             "title": title,
             "description": description,
             "payload": payload,
             "provider_token": self.wallet_token,
-            "prices": json.dumps([p.to_dict() for p in prices], ensure_ascii=False),
+            "prices": json.dumps(serialized_prices, ensure_ascii=False),
             "photo_url": photo_url,
             "photo_size": photo_size,
             "photo_width": photo_width,
@@ -44,6 +48,6 @@ class SendInvoice:
             "need_email": need_email,
             "is_flexible": is_flexible,
             "reply_to_message_id": reply_to_message_id,
-            "reply_markup": reply_markup
+            "reply_markup": markup_dict,
         }
         return await self.api.execute(name="sendInvoice", method=HTTPMethod.POST, data=params)

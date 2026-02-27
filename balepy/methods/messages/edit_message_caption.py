@@ -20,6 +20,6 @@ class EditMessageCaption:
             'message_id': message_id,
             'caption': caption,
             'parse_mode': parse_mode,
-            'reply_markup': reply_markup
+            'reply_markup': reply_markup.to_dict() if hasattr(reply_markup, 'to_dict') else reply_markup
         }
         return await self.api.execute(name='editMessageCaption', method=HTTPMethod.POST, data=params)

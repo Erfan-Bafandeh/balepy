@@ -20,6 +20,6 @@ class EditMessageText:
             'message_id': message_id,
             'text': text,
             'parse_mode': parse_mode,
-            'reply_markup': reply_markup
+            'reply_markup': reply_markup.to_dict() if hasattr(reply_markup, 'to_dict') else reply_markup
         }
         return await self.api.execute(name='editMessageText', method=HTTPMethod.POST, data=params)

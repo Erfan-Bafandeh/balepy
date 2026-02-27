@@ -2,7 +2,6 @@ from typing import Union
 from balepy.objects import HTTPMethod
 from balepy.types import ChatPermissions
 import balepy
-import json
 
 
 class SetChatPermissions:
@@ -13,7 +12,7 @@ class SetChatPermissions:
             permissions: ChatPermissions
     ) -> dict:
         params = {
-            'chat_id': chat_id,
-            'permissions': json.dumps(permissions.to_dict())
+            "chat_id": chat_id,
+            "permissions": permissions.to_dict() if hasattr(permissions, "to_dict") else permissions,
         }
         return await self.api.execute(name="setChatPermissions", method=HTTPMethod.POST, data=params)

@@ -16,6 +16,6 @@ class EditMessageReplyMarkup:
         params = {
             'chat_id': chat_id,
             'message_id': message_id,
-            'reply_markup': reply_markup
+            'reply_markup': reply_markup.to_dict() if hasattr(reply_markup, 'to_dict') else reply_markup
         }
         return await self.api.execute(name='editMessageReplyMarkup', method=HTTPMethod.POST, data=params)

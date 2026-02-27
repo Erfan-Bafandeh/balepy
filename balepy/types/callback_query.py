@@ -54,7 +54,7 @@ class CallbackQuery:
         result = await self.client.send_message(
             chat_id=self.chat_id, text=text, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def edit_text(self, text: str, reply_markup: Optional[dict] = None) -> Message:
         msg = self.message
@@ -62,7 +62,7 @@ class CallbackQuery:
             chat_id=self.chat_id, message_id=msg.message_id if msg else None,
             text=text, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def edit_caption(self, caption: Optional[str] = None, reply_markup: Optional[dict] = None) -> Message:
         msg = self.message
@@ -70,7 +70,7 @@ class CallbackQuery:
             chat_id=self.chat_id, message_id=msg.message_id if msg else None,
             caption=caption, reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def edit_reply_markup(self, reply_markup: Optional[dict] = None) -> Message:
         msg = self.message
@@ -78,7 +78,7 @@ class CallbackQuery:
             chat_id=self.chat_id, message_id=msg.message_id if msg else None,
             reply_markup=reply_markup
         )
-        return Message(result.get("result", result), client=self.client)
+        return Message(result["result"], client=self.client)
 
     async def delete_message(self) -> dict:
         msg = self.message

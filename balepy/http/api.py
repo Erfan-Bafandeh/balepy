@@ -20,6 +20,9 @@ class API:
         base_url = self.client.base_url or self.BASE_URL
         path = f"/bot{self.client.bot_token}/" + name
         timeout = aiohttp.ClientTimeout(total=self.client.timeout)
+        # فقط None values حذف میشن - بقیه همونطور که هستن می‌مونن
+        if data is not None:
+            data = {k: v for k, v in data.items() if v is not None}
         for _ in range(self.client.max_retry):
             async with aiohttp.ClientSession(base_url=base_url, timeout=timeout) as self.session:
                 async with self.session.request(method=method, url=path, json=data) as response:

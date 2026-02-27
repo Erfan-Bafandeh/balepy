@@ -1,7 +1,7 @@
 # BalePy
 
 <p align=center>
-<img src="https://s8.uupload.ir/files/balethon_uvi2_esnh.png" style="width: 200px; height: 200px; border: 1px solid red;" align=center alt="background">
+<img src="https://balepy.github.io/statics/logo.png" style="width: 200px; height: 200px; border: 1px solid red;" align=center alt="balepy">
 </p>
 <h3 align="center"> Balepy a Python Library for create bot API in bale messenger  <br> <h5 align=center> <a href="https://balepy.xyz">Docs</a> | <a href="https://ble.ir/balepy_gap">Community</a> | <a href="https://ble.ir/balepy">Channel</a></h3>
 <h2 align="center"><a href="https://pypi.org/project/balepy"><img src="https://static.pepy.tech/personalized-badge/balepy?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="PyPI Downloads"></a></h2>
