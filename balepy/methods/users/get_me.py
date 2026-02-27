@@ -7,5 +7,5 @@ import balepy
 class GetMe:
 
     async def get_me(self: "balepy.Client") -> User:
-        response = await self.api.execute(name="getme", method=HTTPMethod.GET)
+        response = await self.api.execute(name="getMe", method=HTTPMethod.GET)
         return User(response)

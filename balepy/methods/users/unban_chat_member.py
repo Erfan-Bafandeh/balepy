@@ -1,3 +1,5 @@
+from typing import Union
+
 from balepy.objects import HTTPMethod
 
 import balepy
@@ -7,10 +9,10 @@ class UnbanChatMember:
 
     async def unban_chat_member(
             self: "balepy.Client",
-            chat_id: int,
+            chat_id: Union[int, str],
             user_id: int,
             only_if_banned: bool = True
-    ):
+    ) -> dict:
         params = {
             'chat_id': chat_id,
             'user_id': user_id,

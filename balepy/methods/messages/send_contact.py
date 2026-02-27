@@ -1,3 +1,5 @@
+from typing import Optional, Union
+
 from balepy.objects import HTTPMethod
 
 import balepy
@@ -7,18 +9,20 @@ class SendContact:
 
     async def send_contact(
             self: "balepy.Client",
-            chat_id: str,
+            chat_id: Union[int, str],
             phone_number: str,
             first_name: str,
-            last_name: str = None,
-            reply_to_message_id: int = None,
-            reply_markup: dict = None
-    ):
+            last_name: Optional[str] = None,
+            vcard: Optional[str] = None,
+            reply_to_message_id: Optional[int] = None,
+            reply_markup: Optional[dict] = None
+    ) -> dict:
         params = {
             'chat_id': chat_id,
             'phone_number': phone_number,
             'first_name': first_name,
             'last_name': last_name,
+            'vcard': vcard,
             'reply_to_message_id': reply_to_message_id,
             'reply_markup': reply_markup
         }

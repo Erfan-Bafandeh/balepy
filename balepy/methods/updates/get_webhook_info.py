@@ -6,10 +6,6 @@ import balepy
 
 class GetWebhookInfo:
 
-    """
-    for get status webhook
-    """
-
     async def get_webhook_info(
             self: "balepy.Client"
     ) -> WebHookInfo:

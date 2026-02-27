@@ -14,12 +14,12 @@ class CreateInvoiceLink:
             description: str,
             payload: str,
             prices: list[LabeledPrice]
-    ):
+    ) -> dict:
         params = {
             "title": title,
             "description": description,
             "payload": payload,
             "provider_token": self.wallet_token,
-            "prices": f"{json.dumps([{"label": price.label, "amount": price.amount} for price in prices], ensure_ascii=False)}"
+            "prices": json.dumps([p.to_dict() for p in prices], ensure_ascii=False)
         }
-        return await self.api.execute(name="CreateInvoiceLink", method=HTTPMethod.POST, data=params)
+        return await self.api.execute(name="createInvoiceLink", method=HTTPMethod.POST, data=params)

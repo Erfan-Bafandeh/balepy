@@ -5,11 +5,11 @@ import balepy
 
 class AskReview:
 
-    async def anwser_callback_query(
+    async def ask_review(
             self: "balepy.Client",
             user_id: int,
             delay_seconds: int
-    ):
+    ) -> dict:
         params = {
             'user_id': user_id,
             'delay_seconds': delay_seconds

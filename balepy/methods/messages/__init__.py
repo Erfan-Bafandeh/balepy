@@ -9,10 +9,14 @@ from .send_document import SendDocument
 from .send_video import SendVideo
 from .send_animation import SendAnimation
 from .send_voice import SendVoice
+from .send_sticker import SendSticker
 from .send_media_group import SendMediaGroup
 from .send_location import SendLocation
 from .send_contact import SendContact
 from .send_chat_action import SendChatAction
+from .send_dice import SendDice
+from .send_video_note import SendVideoNote
+from .send_venue import SendVenue
 from .get_file import GetFile
 from .anwser_callback_query import AnwserCallbackQuery
 from .ask_review import AskReview
@@ -34,10 +38,14 @@ class Messages(SendMessage,
                SendVideo,
                SendAnimation,
                SendVoice,
+               SendSticker,
                SendMediaGroup,
                SendLocation,
                SendContact,
                SendChatAction,
+               SendDice,
+               SendVideoNote,
+               SendVenue,
                GetFile,
                AnwserCallbackQuery,
                AskReview,

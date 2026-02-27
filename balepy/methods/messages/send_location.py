@@ -1,3 +1,5 @@
+from typing import Optional, Union
+
 from balepy.objects import HTTPMethod
 
 import balepy
@@ -7,13 +9,13 @@ class SendLocation:
 
     async def send_location(
             self: "balepy.Client",
-            chat_id: str,
+            chat_id: Union[int, str],
             latitude: float,
             longitude: float,
-            horizontal_accuracy=None,
-            reply_to_message_id=None,
-            reply_markup=None
-    ):
+            horizontal_accuracy: Optional[float] = None,
+            reply_to_message_id: Optional[int] = None,
+            reply_markup: Optional[dict] = None
+    ) -> dict:
         params = {
             'chat_id': chat_id,
             'latitude': latitude,
@@ -22,5 +24,4 @@ class SendLocation:
             'reply_to_message_id': reply_to_message_id,
             'reply_markup': reply_markup
         }
-
-        await self.api.execute(name="sendLocation", method=HTTPMethod.POST, data=params)
+        return await self.api.execute(name="sendLocation", method=HTTPMethod.POST, data=params)
